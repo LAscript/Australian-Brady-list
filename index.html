@@ -1,172 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Police Integrity Register - Australia</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-            color: #222;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Police Integrity Register - Australia</title>
 
-        header {
-            background-color: #0b1f3a;
-            color: white;
-            padding: 20px;
-        }
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+header {
+    background-color: #0b1f3a;
+    color: white;
+    padding: 20px;
+}
 
-        nav {
-            margin-top: 10px;
-        }
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
 
-        nav a {
-            color: #cfd8e3;
-            margin-right: 15px;
-            text-decoration: none;
-            font-size: 14px;
-        }
+.controls {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
-        .container {
-            padding: 30px;
-            max-width: 1000px;
-            margin: auto;
-        }
+input, select {
+    padding: 10px;
+    font-size: 14px;
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 5px solid #0b1f3a;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 5px solid #0b1f3a;
+}
 
-        .card h2 {
-            margin-top: 0;
-        }
+.tag {
+    display: inline-block;
+    background: #e0e6ed;
+    padding: 5px 10px;
+    margin-right: 5px;
+    font-size: 12px;
+}
 
-        .tag {
-            display: inline-block;
-            padding: 5px 10px;
-            font-size: 12px;
-            background: #e0e6ed;
-            margin-right: 5px;
-            border-radius: 3px;
-        }
-
-        .footer {
-            background: #0b1f3a;
-            color: white;
-            padding: 20px;
-            font-size: 12px;
-        }
-
-        .disclaimer {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            margin-top: 40px;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-        }
-    </style>
+.disclaimer {
+    background: #fff3cd;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
     <h1>Police Integrity Register (Australia)</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Cases</a>
-        <a href="#">About</a>
-        <a href="#">Legal Notice</a>
-    </nav>
 </header>
 
 <div class="container">
 
-    <div class="disclaimer">
-        <strong>Legal Disclaimer:</strong><br>
-        This website contains information sourced from publicly available records including court decisions, official reports, and verified media publications. 
-        All individuals are presumed innocent unless proven guilty in a court of law. 
-        Information is provided for public interest and transparency purposes only. 
-        We do not publish unverified allegations.
-    </div>
+<div class="disclaimer">
+<strong>Legal Notice:</strong> This site only contains verified public information. No unproven allegations are published.
+</div>
 
-    <h2 class="section-title">Recorded Cases</h2>
+<div class="controls">
+    <input type="text" id="search" placeholder="Search officer name...">
+    
+    <select id="stateFilter">
+        <option value="all">All States</option>
+        <option value="SA">South Australia</option>
+        <option value="NSW">New South Wales</option>
+        <option value="VIC">Victoria</option>
+        <option value="QLD">Queensland</option>
+        <option value="WA">Western Australia</option>
+        <option value="TAS">Tasmania</option>
+        <option value="NT">Northern Territory</option>
+        <option value="ACT">Australian Capital Territory</option>
+    </select>
+</div>
 
-    <div class="card">
-        <h2>Officer: John Smith</h2>
-        <p><strong>Agency:</strong> South Australia Police (SAPOL)</p>
-        <p><strong>Rank:</strong> Constable</p>
+<div id="cards">
 
-        <p><strong>Status:</strong>
-            <span class="tag">Court Outcome Recorded</span>
-            <span class="tag">Credibility Concern</span>
-        </p>
+<div class="card" data-name="john davis" data-state="SA">
+    <h2>Officer: John Davis</h2>
+    <p><strong>State:</strong> South Australia</p>
+    <p><strong>Agency:</strong> SAPOL</p>
+    <span class="tag">Court Finding</span>
+</div>
 
-        <h3>Case Summary</h3>
-        <p>
-            In 2023, the officer was charged with providing false testimony in a criminal proceeding.
-            The District Court found inconsistencies in the officer's statements.
-        </p>
+<div class="card" data-name="sarah thompson" data-state="NSW">
+    <h2>Officer: Sarah Thompson</h2>
+    <p><strong>State:</strong> New South Wales</p>
+    <p><strong>Agency:</strong> NSW Police</p>
+    <span class="tag">Misconduct Finding</span>
+</div>
 
-        <h3>Outcome</h3>
-        <p>
-            The court ruled that the officer’s evidence was unreliable. The officer was not convicted of a criminal offence.
-        </p>
-
-        <h3>Source</h3>
-        <p>
-            District Court of South Australia – Case Reference #12345<br>
-            Public record accessed 2026
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>Officer: [Name Redacted]</h2>
-        <p><strong>Agency:</strong> SAPOL</p>
-
-        <p><strong>Status:</strong>
-            <span class="tag">Misconduct Finding</span>
-        </p>
-
-        <h3>Summary</h3>
-        <p>
-            Identified in an official integrity body report regarding improper handling of evidence.
-        </p>
-
-        <h3>Outcome</h3>
-        <p>
-            Misconduct finding confirmed. Disciplinary action taken (details limited to public report).
-        </p>
-
-        <h3>Source</h3>
-        <p>
-            ICAC Public Report – South Australia (2022)
-        </p>
-    </div>
+<div class="card" data-name="michael brown" data-state="VIC">
+    <h2>Officer: Michael Brown</h2>
+    <p><strong>State:</strong> Victoria</p>
+    <p><strong>Agency:</strong> Victoria Police</p>
+    <span class="tag">Credibility Concern</span>
+</div>
 
 </div>
 
-<div class="footer">
-    <p>
-        © 2026 Police Integrity Register Australia<br>
-        This website is not affiliated with any government agency.<br>
-        All information is derived from publicly available sources.
-    </p>
 </div>
+
+<script>
+const searchInput = document.getElementById("search");
+const stateFilter = document.getElementById("stateFilter");
+const cards = document.querySelectorAll(".card");
+
+function filterCards() {
+    const searchValue = searchInput.value.toLowerCase();
+    const stateValue = stateFilter.value;
+
+    cards.forEach(card => {
+        const name = card.getAttribute("data-name");
+        const state = card.getAttribute("data-state");
+
+        const matchName = name.includes(searchValue);
+        const matchState = stateValue === "all" || state === stateValue;
+
+        if (matchName && matchState) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+searchInput.addEventListener("keyup", filterCards);
+stateFilter.addEventListener("change", filterCards);
+</script>
 
 </body>
 </html>
